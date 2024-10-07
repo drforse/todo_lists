@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "5001:80"
+    networks:
+      - zm
+  db:
+    image: postgres:16.0
+    environment:
+      - POSTGRES_USER=${DB_USER:?err}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:?err}
+      - POSTGRES_DB=${DB_NAME:?err}
+    ports:
+      - "54321:5432"
+    networks:
+      - zm
+networks:
+  zm: 
+    name: zm_team
+    driver: bridge

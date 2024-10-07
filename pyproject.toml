@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "zm-team-second"
+version = "0.1.0"
+description = ""
+authors = ["drforse <george.lifeslice@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "^2.9.2"
+sqlalchemy = "^2.0.35"
+fastapi = "^0.115.0"
+uvicorn = "^0.31.0"
+fastapi-jwt = {extras = ["python-jose"], version = "^0.3.0"}
+python-dotenv = "^1.0.1"
+psycopg2 = "^2.9.9"
+passlib = "^1.7.4"
+alembic = "^1.13.3"
+python-multipart = "^0.0.12"
+bcrypt = "^4.2.0"
+pytest = "^8.3.3"
+requests = "^2.32.3"
+asyncpg = "^0.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
